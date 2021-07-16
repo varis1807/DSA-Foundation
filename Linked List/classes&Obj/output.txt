@@ -1,0 +1,8 @@
+Brand: one Plus
+Model: 9 Pro
+Color: Lake Blue
+Ram: 12GB
+Storage: 256GB
+Battery: 4500mAH
+
+
