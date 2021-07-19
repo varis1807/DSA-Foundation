@@ -6,7 +6,7 @@ public class maze_path {
         }
 
         int count = 0;
-        if (sc + 1 <= ec)
+        if (sc + 1 <= ec) 
             count += mazePath_HV(sr, sc + 1, er, ec, ans + "H");
         if (sr + 1 <= er)
             count += mazePath_HV(sr + 1, sc, er, ec, ans + "V");

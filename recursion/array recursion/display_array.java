@@ -6,8 +6,9 @@ public class display_array {
     public static void printArray(int[] arr, int idx) {
         if (arr.length == idx)
             return;
-        System.out.print(arr[idx]+" ");
+        System.out.println(arr[idx]+" ");
         printArray(arr, idx + 1);
+        System.out.print(arr[idx]+" ");
 
     }
     public static void main(String[] args) {
