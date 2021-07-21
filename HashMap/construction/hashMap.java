@@ -1,7 +1,10 @@
-import java.util.*;
+import java.util.LinkedList;
+import java.util.ArrayList;
 
-public class hashMap {
-    public class Node {
+public class HashMap {
+    // Data Members=========================================
+
+    private class Node {
         Integer key = null;
         Integer value = null;
 
@@ -12,89 +15,134 @@ public class hashMap {
     }
 
     private LinkedList<Node>[] Buckets;
+    private int totalNoOfNodes = 0;
     private int bucketLen = 0;
-    private int TotalNoOfNodes = 0;
 
-    // Constructor===============================
+    // Constructor==========================================
 
-    private void initialize(int size) {
+    private void intilize(int size) {
         bucketLen = size;
         Buckets = new LinkedList[size];
         for (int i = 0; i < size; i++)
             Buckets[i] = new LinkedList<>();
-        TotalNoOfNodes = 0;
+
+        totalNoOfNodes = 0;
     }
 
-    public hashMap() {
-        initialize(10);
+    public HashMap() {
+        intilize(10);
     }
 
-    // Data Member====================================
-    // Basic Funtion==================================
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        int tempSize = this.totalNoOfNodes;
+        for (int i = 0; i < this.bucketLen; i++) {
+            LinkedList<Node> group = this.Buckets[i];
+            int size = group.size();
+            while (size-- > 0) {
+
+                Node node = group.removeFirst();
+                sb.append(node.key + "=" + node.value);
+                group.addLast(node);
+
+                if (--tempSize != 0)
+                    sb.append(",");
+            }
+        }
+        sb.append("}");
+        return sb.toString();
+    }
+
+    // Basic Functions======================================
 
     public int size() {
-
+        return this.totalNoOfNodes;
     }
 
     public boolean isEmpty() {
-
+        return this.totalNoOfNodes == 0;
     }
 
-    // Exception==================================
+    // DS Functions=========================================
 
-    // DS Function================================
-
-    public void put(Integer key, Integer Value) {
-
-    }
-
-    public Integer get(Integer key){
-
-        // if(!containsKey(key)) return null;
-
-        LinkedList<Node> group = getGroup(key);
-        int groupSize = group.size();
-        Integer res = null;
-        while(groupSize-- > 0){
-            if( group.getFirst().key == key){
-                res = group.getFirst().value;
-                break;
+    public ArrayList<Integer> keySet() {
+        ArrayList<Integer> ans = new ArrayList<>();
+        for (int i = 0; i < this.bucketLen; i++) {
+            LinkedList<Node> group = this.Buckets[i];
+            int size = group.size();
+            while (size-- > 0) {
+                Node node = group.removeFirst();
+                ans.add(node.key);
+                group.addLast(node);
             }
-
-            group.addLast(group.removeFirst());
         }
-        return res;
+
+        return ans;
     }
 
-    public Integer remove(Integer key){
-        LinkedList<Node> group = getGroup(key);
-        int groupSize = group.size();
-        Integer res = null;
-        while(groupSize-- > 0){
-            if(group.getFirst().key == key){
-                res = group.removeFirst().value;
-                this.TotalNoOfNodes--;
-                break;
+    private void rehash() {
+        LinkedList<Node>[] temp = this.Buckets;
+        intilize((int) (this.bucketLen * 2)); //  1 <= factor <= 2 
+
+        for (int i = 0; i < temp.length; i++) {
+            LinkedList<Node> group = temp[i];
+            int size = group.size();
+            while (size-- > 0) {
+                Node node = group.removeFirst();
+                put(node.key, node.value);
             }
-            group.addLast(group.removeFirst());
         }
-        return res;
     }
 
-    
-    public Integer getOrDefault(Integer key, Integer defVal){
+    public void put(Integer key, Integer value) {
+        boolean res = containsKey(key);
         LinkedList<Node> group = getGroup(key);
-        int groupSize = group.size();
-        Integer res = defVal;
-        while(groupSize-- > 0){
-            if( group.getFirst().key == key){
-                res = group.getFirst().value;
-                break;
-            }
 
-            group.addLast(group.removeFirst());
+        if (res) {
+            group.getFirst().value = value;
+        } else {
+            Node node = new Node(key, value);
+            group.addLast(node);
+            this.totalNoOfNodes++;
+            double lambda = group.size() / (1.0 * this.bucketLen);
+
+            if (lambda > 0.4)
+                rehash();
         }
-        return res;
+    }
+
+    public void putIfAbsent(Integer key, Integer defaultValue) {
+        boolean res = containsKey(key);
+        LinkedList<Node> group = getGroup(key);
+        if (!res) {
+            Node node = new Node(key, defaultValue);
+            group.addLast(node);
+            this.totalNoOfNodes++;
+        }
+    }
+
+    public Integer get(Integer key) {
+        boolean res = containsKey(key);
+        LinkedList<Node> group = getGroup(key);
+        return res ? group.getFirst().value : null;
+    }
+
+    public Integer getOrDefault(Integer key, Integer defaultValue) {
+        Integer val = get(key);
+        return val != null ? val : defaultValue;
+    }
+
+    public Integer remove(Integer key) {
+        boolean res = containsKey(key);
+        LinkedList<Node> group = getGroup(key);
+
+        if (res) {
+            this.totalNoOfNodes--;
+            return group.removeFirst().key;
+        }
+        return null;
     }
 
     public boolean containsKey(Integer key) {
@@ -102,12 +150,14 @@ public class hashMap {
         int gs = group.size();
         boolean res = false;
         while (gs-- > 0) {
-            if (group.getFirst().key == key) {
+            if (group.getFirst().key.equals(key)) {
                 res = true;
                 break;
             }
+
             group.addLast(group.removeFirst());
         }
+
         return res;
     }
 
@@ -119,4 +169,5 @@ public class hashMap {
     private int getHashCode(Integer key) {
         return Math.abs(key.hashCode()) % bucketLen;
     }
+
 }
