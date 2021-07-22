@@ -1,4 +1,4 @@
-public class rat_in_maze_with_multiple_jump {
+public class multiple_jumps {
     // Mark for
     // all unvisited Nbr's---->
     // call dfs for Nbr'sunMark
