@@ -31,27 +31,7 @@ public class questions {
         return slow;
     }
 
-    // 19
-    public ListNode removeNthFromEnd(ListNode head, int n) {
-        if (head == null || head.next == null)
-            return null;
-
-        ListNode slow = head, fast = head;
-        while (n-- > 0)
-            fast = fast.next;
-
-        if (fast == null)
-            return head = head.next;
-
-        while (fast.next != null) {
-            slow = slow.next;
-            fast = fast.next;
-        }
-
-        slow.next = slow.next.next;
-
-        return head;
-    }
+   
 
     // 83
     public ListNode deleteDuplicates(ListNode head) {
