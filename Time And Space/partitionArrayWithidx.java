@@ -13,7 +13,7 @@ public class partitionArrayWithidx {
 
         swap(arr, ++p, li);
     }
-
+    //4 3 2 1 5 6 12 10 
     public static void display(int[] arr) {
         for (int ele : arr)
             System.out.print(ele + " ");

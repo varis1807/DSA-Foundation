@@ -1,15 +1,17 @@
 import java.util.*;
 
-public class genericTree {
-    public static class Node {
-        int data = 0;
-        ArrayList<Node> childs;
-    
-        Node(int data) {
-            this.data = data;
-            this.childs = new ArrayList<>();
-        }
+class Node {
+    int data = 0;
+    ArrayList<Node> childs;
+
+    Node(int data) {
+        this.data = data;
+        this.childs = new ArrayList<>();
     }
+}
+
+public class genericTree {
+
     public static int height(Node root) {
         int h = -1;
         for (Node child : root.childs)

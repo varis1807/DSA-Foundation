@@ -1,5 +1,7 @@
 
 public class ceil_floor {
+    public static int ceil;
+    public static int floor;
     public static void ceilAndFloor_(Node node, int data) {
         if (node.data < data)
             floor = Math.max(floor, node.data);
@@ -16,13 +18,5 @@ public class ceil_floor {
         ceilAndFloor_(node, data);
     }
 
-    public static int floor(Node node, int ub) {
-        int maxRes = -(int) 1e9;
-        for (Node child : node.childs) {
-            int recRes = floor(child, ub);
-            maxRes = Math.max(maxRes, recRes);
-        }
-
-        return node.data < ub ? Math.max(node.data, maxRes) : maxRes;
-    }
+    
 }

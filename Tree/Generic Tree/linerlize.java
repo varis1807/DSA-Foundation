@@ -1,4 +1,11 @@
 public class linerlize {
+    public static Node getTail(Node node) {
+        while (node.childs.size() != 0) {
+            node = node.childs.get(0);
+        }
+
+        return node;
+    }
     public static void linearize(Node node) {
         for (Node child : node.childs) {
             linearize(child);

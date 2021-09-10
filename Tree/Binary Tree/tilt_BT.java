@@ -20,17 +20,22 @@ public class tilt_BT {
         int sum = 0;
     }
 
-    public tiltPair findTilt(Node root) {
+    public tiltPair findTilt_(Node root) {
         if (root == null)
             return new tiltPair();
 
-        tiltPair left = findTilt(root.left);
-        tiltPair right = findTilt(root.right);
+        tiltPair left = findTilt_(root.left);
+        tiltPair right = findTilt_(root.right);
 
         tiltPair myAns = new tiltPair();
 
         myAns.tiltSF = left.tiltSF + right.tiltSF + Math.abs(left.sum - right.sum);
         myAns.sum = left.sum + right.sum + root.data;
         return myAns;
+    }
+    public int findTilt(TreeNode root) {
+        tiltPair ret= findTilt_(root);
+        return ret.tiltSF;
+        
     }
 }

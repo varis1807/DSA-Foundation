@@ -1,8 +1,8 @@
-// public class flood_fill1 {
-//     // Mark
-//     // for all unvisited Nbr's
-//     // ---->call dfs for Nbr's
-//     // unMark
+public class flood_fill1 {
+    // // Mark
+    // // for all unvisited Nbr's
+    // // ---->call dfs for Nbr's
+    // // unMark
 
     public static int floodFill(int sr, int sc, int[][] board, String ans, int[][] dir, String[] dirS) {
         int n = board.length, m = board[0].length;
@@ -24,21 +24,20 @@
                     count += floodFill(r, c, board, ans + dirS[d], dir, dirS);
             }
             board[sr][sc] = 0;// free
-            return count;
+
         }
+        return count;
+    }
 
-//         board[sr][sc] = 0; //free
-//         return count;
+    // board[sr][sc] = 0; //free
+    // return count;
 
-//     }
+    // }
 
-//     public static void main(String[] args) {
-//         int board[][] = new int[3][3];
-//         int[][] dir = { { 1, 0 }, { 0, 1 }, { 0, -1 }, { -1, 0 } };
-//         String[] dirS = { "d", "r", "l", "t" };
-//         System.out.println(floodFill(0, 0, board, "", dir, dirS));
-//     }
-// }
-
-
-
+    public static void main(String[] args) {
+        int board[][] = new int[3][3];
+        int[][] dir = { { 1, 0 }, { 0, 1 }, { 0, -1 }, { -1, 0 } };
+        String[] dirS = { "d", "r", "l", "t" };
+        System.out.println(floodFill(0, 0, board, "", dir, dirS));
+    }
+}

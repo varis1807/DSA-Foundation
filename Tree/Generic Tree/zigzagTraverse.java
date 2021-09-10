@@ -2,12 +2,12 @@ import java.util.*;
 
 public class zigzagTraverse {
     public static void levelOrderZigZag(Node node) {
-        if (root == null)
+        if (node == null)
             return;
         LinkedList<Node> que = new LinkedList<>(); // removeFirst, addLast
         LinkedList<Node> st = new LinkedList<>(); // removeFirst, addFirst
 
-        que.addLast(root);
+        que.addLast(node);
         int level = 0;
 
         List<List<Integer>> ans = new ArrayList<>();
