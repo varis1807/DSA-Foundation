@@ -85,4 +85,38 @@ public class stack {
         return pop_();
     }
 
+    // Using LinkedList
+    private Node head;
+
+    public void push1(int x) {
+        if (head == null)
+            head = new Node(x, x, null);
+        else
+            head = new Node(x, Math.min(x, head.min), head);
+    }
+
+    public void pop1() {
+        head = head.next;
+    }
+
+    public int top1() {
+        return head.val;
+    }
+
+    public int getMin() {
+        return head.min;
+    }
+
+    private class Node {
+        int val;
+        int min;
+        Node next;
+
+        private Node(int val, int min, Node next) {
+            this.val = val;
+            this.min = min;
+            this.next = next;
+        }
+    }
+
 }

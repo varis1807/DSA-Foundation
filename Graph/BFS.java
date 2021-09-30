@@ -30,6 +30,14 @@ public class BFS {
         graph[u].add(new Edge(u, v, w));
         graph[v].add(new Edge(v, u, w));
     }
+    public static void display(ArrayList<Edge>[] graph, int N) {
+        for (int i = 0; i < N; i++) {
+              for (Edge e : graph[i]) {
+                    System.out.print("[" + i + "-> " + e.nbr + ", " + e.wt + "]");
+              }
+              System.out.println();
+        }
+  }
     public static void construction() {
         int N = 7;
         ArrayList<Edge>[] graph = new ArrayList[N];
@@ -43,6 +51,7 @@ public class BFS {
         addEdge(graph, 4, 5, 2);
         addEdge(graph, 4, 6, 8);
         addEdge(graph, 5, 6, 3);
+        display(graph, N);
         bfs(graph, 1, 6);
     }
 public static void main(String[] args) {

@@ -16,7 +16,7 @@ public class ShortestPathUsing_BFS {
             int size = que.size();
             while (size-- > 0) {
                 int rvtx = que.removeFirst();
-                
+
                 // for shortest path
                 if (rvtx == dest) {
                     shortestPath = level;
@@ -30,5 +30,32 @@ public class ShortestPathUsing_BFS {
                 }
             }
         }
+    }
+
+    public static void addEdge(ArrayList<Edge>[] graph, int u, int v, int w) {
+        graph[u].add(new Edge(u, v, w));
+        graph[v].add(new Edge(v, u, w));
+    }
+
+    public static void construction() {
+        int N = 6;
+        ArrayList<Edge>[] graph = new ArrayList[N];
+        for (int i = 0; i < N; i++)
+            graph[i] = new ArrayList<>();
+        addEdge(graph, 1, 2, 6);
+        addEdge(graph, 1, 3, 5);
+        addEdge(graph, 1, 4, 5);
+        addEdge(graph, 2, 5, -1);
+        addEdge(graph, 3, 2, -2);
+        addEdge(graph, 3, 5, 1);
+        addEdge(graph, 4, 3, -2);
+        addEdge(graph, 4, 6, -1);
+        addEdge(graph, 5, 7, 3);
+        addEdge(graph, 6, 7, 3);
+        bfs(graph, 1, 7);
+    }
+
+    public static void main(String[] args) {
+        construction();
     }
 }

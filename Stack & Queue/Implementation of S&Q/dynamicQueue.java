@@ -20,8 +20,6 @@ public class dynamicQueue extends queue {
             for (int ele : temp)
                 super.add(ele);
         }
-
-        super.add(ele);
     }
 
 }

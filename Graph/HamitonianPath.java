@@ -23,7 +23,6 @@ public class HamitonianPath {
             }
             return;
         }
-
         vis[src] = true;
         for (Edge e : graph[src]) {
             if (!vis[e.nbr]) {
