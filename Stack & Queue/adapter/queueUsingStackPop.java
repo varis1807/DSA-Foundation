@@ -1,3 +1,4 @@
+package adapter;
 import java.util.LinkedList;
 
 class queueUsingStackPop {

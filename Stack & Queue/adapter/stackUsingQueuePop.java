@@ -1,6 +1,5 @@
+package adapter;
 import java.util.LinkedList;
-
-
 
 public class stackUsingQueuePop {
     public static class stack {

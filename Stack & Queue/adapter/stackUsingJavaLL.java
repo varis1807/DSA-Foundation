@@ -1,8 +1,9 @@
-//package adapter;
+package adapter;
 
 import java.util.LinkedList;
 
 public class stackUsingJavaLL {
+    
     public static class stack {
         private LinkedList<Integer> ll = new LinkedList<>();
 
