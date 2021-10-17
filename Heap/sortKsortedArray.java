@@ -26,4 +26,9 @@ public class sortKsortedArray {
         for (int ele : ans)
             System.out.print(ele + " ");
     }
+
+    public static void main(String[] args) {
+        int[][] arr = { { 10, 20, 30, 40, 50 }, { 5, 7, 9, 11, 19, 55, 57 }, { 1, 2, 3 }, { 32, 39 } };
+        sortKsortedArray1(arr);
+    }
 }
