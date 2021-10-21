@@ -28,7 +28,7 @@ public class sortKsortedArray {
     }
 
     public static void main(String[] args) {
-        int[][] arr = { { 10, 20, 30, 40, 50 }, { 5, 7, 9, 11, 19, 55, 57 }, { 1, 2, 3 }, { 32, 39 } };
+        int[][] arr = { { 10, 20, 30, 40, 50 }, { 5, 7, 9, 11, 19 }, { 1, 2, 3, 4, 5 }, { 32, 39, 34, 5, 2 } };
         sortKsortedArray1(arr);
     }
 }

@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class KthLargest {
     public static Scanner scn = new Scanner(System.in);
 
+    // this is min priority queue
     public static int kthLargest(int[] arr, int k) {
         PriorityQueue<Integer> pq = new PriorityQueue<>();
         for (int ele : arr) {
