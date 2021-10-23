@@ -20,4 +20,7 @@ public class IndexOfChar {
             System.out.println(ch + " -> " + map.get(ch));
         }
     }
+    public static void main(String[] args) {
+        IndexOfChar1("snfsgksnbsdjbusdbvbsdjbvjbsdbjsbdjbcjbjbnkakncaaaaaaaaaaaakbdvsdkvnishnskbs");
+    }
 }
