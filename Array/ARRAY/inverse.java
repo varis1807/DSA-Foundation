@@ -19,7 +19,7 @@ public class inverse {
             ans[idx] = i;
         }
         for (int l : ans) {
-            System.out.print(l);
+            System.out.print(l+" ");
         }
     }
 

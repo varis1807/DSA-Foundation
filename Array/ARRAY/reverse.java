@@ -29,10 +29,16 @@ public class reverse {
             System.out.println(l);
         }
     }
+public static void rever(int[] arr){
+    int n=arr.length;
+    for(int i=n-1; i>=0;i--){
+        System.out.print(arr[i]+" ");
+    }
 
+}
     public static void main(String[] args) {
         int n = scn.nextInt();
         int[] arr = input(n);
-        rev(arr);
+        rever(arr);
     }
 }
