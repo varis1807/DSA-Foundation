@@ -32,7 +32,7 @@ public class t_f {
         // String[] dirS = { "u", "d", "r", "l", "n", "w", "s", "e" };
         int[][] dir = { { 1, 0 }, { 0, 1 } };
         String[] dirS = { "d", "r" };
-        int[][] board = { { 0, 0, 0 }, { 0, 0, 1 }, { 0, 0, 0 } };
+        int[][] board = { { 0, 0, 0 }, { 0, 0, 1 }, { 1, 0, 0 } };
         System.out.println(floodFill_2(0, 0, board, "", dir, dirS));
     }
 }
