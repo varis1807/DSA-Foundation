@@ -26,7 +26,11 @@ public class count_leaves {
         if (root.left == null && root.right == null)
             return 1;
 
-        return countLeaves(root.left) + countLeaves(root.right);
+        // return countLeaves(root.left) + countLeaves(root.right);
+        int count = 0;
+        count += countLeaves(root.left);
+        count += countLeaves(root.right);
+        return count;
     }
 
     public static void countLeaf(Node root, ArrayList<Integer> ans) {
@@ -56,6 +60,6 @@ public class count_leaves {
         tree.root.left.right = new Node(6);
         ArrayList<Integer> ans = new ArrayList<>();
         // System.out.print(tree.countLeaves(tree.root));
-        countLeaf(tree.root, ans);
+        System.out.println(countLeaves(tree.root));
     }
 }
