@@ -14,8 +14,8 @@ public class node_ToRootPath {
             return true;
         }
         boolean res = nodeToRootPath_(node.left, data, ans) || nodeToRootPath_(node.right, data, ans);
-        //if (res)
-            //ans.add(node.data);
+        if (res)
+            ans.add(node.data);
 
         return res;
     }
@@ -27,7 +27,7 @@ public class node_ToRootPath {
     // }
     public static ArrayList<Integer> nodeToRootPath(Node node, int data) {
         ArrayList<Integer> ans = new ArrayList<>();
-        System.out.println(nodeToRootPath_(node, data, ans););
+        System.out.println(nodeToRootPath_(node, data, ans));
         
         return ans;
     }
