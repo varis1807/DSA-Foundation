@@ -23,7 +23,7 @@ public class node_ToRootPath {
     // public static void nodeToRootPath(Node node, int data) {
     // ArrayList<Integer> ans = new ArrayList<>();
     // nodeToRootPath_(node, data, ans);
-    // System.out.println(ans);
+    // System.out.println(ans);       
     // }
     public static ArrayList<Integer> nodeToRootPath(Node node, int data) {
         ArrayList<Integer> ans = new ArrayList<>();
