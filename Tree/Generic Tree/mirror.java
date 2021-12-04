@@ -2,8 +2,6 @@ public class mirror {
     public static boolean areMirror(Node n1, Node n2) {
         if(n1.childs.size()!=n2.childs.size()) 
         return false;
-       
-           
            boolean res=true;
            
            int i=0;
