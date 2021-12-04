@@ -33,7 +33,7 @@ public class tilt_BT {
         myAns.sum = left.sum + right.sum + root.data;
         return myAns;
     }
-    public int findTilt(TreeNode root) {
+    public int findTilt(Node root) {
         tiltPair ret= findTilt_(root);
         return ret.tiltSF;
         
