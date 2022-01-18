@@ -17,6 +17,6 @@ public static ArrayList<String> subseq(String str){
     return myAns;
 }
 public static void main(String[] args) {
-    System.out.println(subseq("ahbgdc"));
+    System.out.println(subseq("abcd"));
 }
 }
