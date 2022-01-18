@@ -18,6 +18,6 @@ public class get_stair_path {
         return myAns;
     }
     public static void main(String[] args) {
-        System.out.println(getStairPath(3));
+        System.out.println(getStairPath(5));
     }
 }

@@ -15,7 +15,7 @@ public class decode_way {
         ArrayList<String> myAns = new ArrayList<>();
         ArrayList<String> recAnsFor1Len = decodeWays(str.substring(1));
         for (String s : recAnsFor1Len) {
-            myAns.add((char) ('A' + ch1 - '1') + s);
+            myAns.add((char) ('a' + ch1 - '1') + s);
         }
 
         if (str.length() > 1) {
@@ -23,7 +23,7 @@ public class decode_way {
             if (num <= 26) {
                 ArrayList<String> recAnsFor2Len = decodeWays(str.substring(2));
                 for (String s : recAnsFor2Len) {
-                    myAns.add((char) ('A' + num - 1) + s);
+                    myAns.add((char) ('a' + num - 1) + s);
                 }
             }
         }
