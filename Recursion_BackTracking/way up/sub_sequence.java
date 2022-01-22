@@ -9,6 +9,7 @@ public class sub_sequence {
             return 1;
         }
         char ch = que.charAt(0);
+        System.out.print("----"+ch);
         String roq = que.substring(1);
         int count = 0;
         count += subsequence(roq, ans);
@@ -30,9 +31,9 @@ public class sub_sequence {
         return count;
     }
     public static void main(String[] args) {
-        // System.out.println(subsequence("abc", ""));
-        ArrayList<String> res = new ArrayList<>();
+         System.out.println(subsequence("abc", ""));
+        // ArrayList<String> res = new ArrayList<>();
 
-        System.out.println(subsequence1("abc", "", res));
+        // System.out.println(subsequence1("abc", "", res));
     }
 }

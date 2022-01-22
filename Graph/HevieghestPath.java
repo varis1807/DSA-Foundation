@@ -10,10 +10,8 @@ public class HevieghestPath {
             pathPair base = new pathPair();
             base.psf += src;
             base.wsf = 0;
-
             return base;
         }
-
         vis[src] = true;
         pathPair myAns = new pathPair();
         for (Edge e : graph[src]) {

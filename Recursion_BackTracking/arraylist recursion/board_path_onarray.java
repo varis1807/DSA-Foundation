@@ -7,7 +7,6 @@ public class board_path_onarray {
             base.add("");
             return base;
         }
-
         ArrayList<String> myAns = new ArrayList<>();
         for (int i = 0; i < move.length && n - move[i] >= 0; i++) {
             ArrayList<String> recAns = boardPathOnArray(n - move[i], move);
@@ -15,10 +14,8 @@ public class board_path_onarray {
                 myAns.add(move[i] + s);
             }
         }
-
         return myAns;
     }
-
     public static void main(String[] args) {
         int n = scn.nextInt();
         int[] move = new int[n];
