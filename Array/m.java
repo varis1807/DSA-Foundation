@@ -3,6 +3,7 @@ import java.util.*;
 
 public class m {
       public static Scanner scn = new Scanner(System.in);
+      public static String Place;
 
       public static void input() {
             int n = scn.nextInt();
@@ -11,17 +12,12 @@ public class m {
                   System.out.println("Patient : ");
                   arr[i] = scn.nextInt();
                   System.out.println("Name : ");
-                  String Name = scn.nextLine();
+                  String Name = scn.next();
                   System.out.println("Place : ");
-                  String Place = scn.nextLine();
+                  String Place = scn.next();
                   System.out.println("Age : ");
                   int Age = scn.nextInt();
             }
-
-            for (int ele : arr)
-                  System.out.println(ele + "");
-            System.out.println();
-
       }
 
       public static void output(String Place) {
@@ -41,4 +37,3 @@ public class m {
 
       }
 }
-
