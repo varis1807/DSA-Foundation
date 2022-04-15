@@ -1,12 +1,15 @@
 import java.util.Scanner;
-import java.util.*;
 
-public class m {
+
+public class main {
       public static Scanner scn = new Scanner(System.in);
 
       public static void input() {
+            System.out.print("Number of Patient : ");
             int n = scn.nextInt();
             int[] arr = new int[3];
+            int Local_patients = 0;
+                  int Outstation_patients = 0;
             for (int i = 0; i < n; i++) {
                   System.out.print("Patient : ");
                   arr[i] = scn.nextInt();
@@ -20,8 +23,6 @@ public class m {
                   System.out.print("Age : ");
                   int Age = scn.nextInt();
                   System.out.println("---------");
-                  int Local_patients = 0;
-                  int Outstation_patients = 0;
                   String str1 = "Bangalore";
                   if (Place.equals(str1))
                         Local_patients++;
